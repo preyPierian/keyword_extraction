@@ -22,3 +22,5 @@ class sql_connector :
         for x in array :
             self.cursor.execute(("INSERT INTO "+  table_name +" (word,start_index,end_index) VALUES (%s,%s,%s) "),(x.word,x.start_index,x.end_index))
         self.db.commit()
+    
+    

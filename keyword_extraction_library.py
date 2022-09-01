@@ -36,26 +36,3 @@ class keyword_extraction :
                 print("Not found in " + current_word )
         
         self.found_keywords = output
-    
-"""  def sql_connection(self,host_name,username,password):
-        mydb = mysql.connector.connect(
-            host =host_name,
-            user =username,
-            passwd =password, 
-        )
-        self.db = mydb
-        self.cursor = self.db.cursor()
-
-    def sql_setup(self, my_cursor) :
-        my_cursor.execute("CREATE DATABASE IF NOT EXISTS "+self.search_word+";")
-        my_cursor.execute("USE " +self.search_word)
-        my_cursor.execute("DROP TABLE IF EXISTS "+ self.list_name +";")
-        my_cursor.execute("CREATE TABLE "+ self.list_name +" (word VARCHAR(255), start_index INTEGER(10), end_index INTEGER(10), keyword_id INTEGER AUTO_INCREMENT PRIMARY KEY)")
-        self.insert_template = ("INSERT INTO "+self.list_name+" (word,start_index,end_index) VALUES (%s,%s,%s) ")
-
-    def sql_add_entries(self,array,insert_template,cursor,db):
-        for x in array :
-            print(x.word)
-            cursor.execute(insert_template,(x.word,x.start_index,x.end_index))
-        db.commit()
-    """
