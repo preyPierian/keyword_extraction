@@ -37,7 +37,7 @@ class keyword_extraction :
         
         self.found_keywords = output
     
-    def sql_connection(self,host_name,username,password):
+"""  def sql_connection(self,host_name,username,password):
         mydb = mysql.connector.connect(
             host =host_name,
             user =username,
@@ -58,3 +58,4 @@ class keyword_extraction :
             print(x.word)
             cursor.execute(insert_template,(x.word,x.start_index,x.end_index))
         db.commit()
+    """

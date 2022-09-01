@@ -1,11 +1,13 @@
+import imp
 from keyword_extraction_library import keyword_extraction
+from sql_library import sql_connector
 
 search_list = "random_words"
 
-test = keyword_extraction(search_list,["cat","rat","rough","mat", "tough", "hot"],"gh")
+test = keyword_extraction(search_list,["cat","rat","rough","mat", "tough", "hot"],"ough")
 
-test.sql_connection("localhost","root","root")
+sql_connection = sql_connector("localhost","root","root")
 
-test.sql_setup(test.cursor)
+sql_connection.sql_setup(test.search_word,test.list_name)
 
-test.sql_add_entries(test.found_keywords,test.insert_template,test.cursor,test.db)
+sql_connection.sql_add_subwords(test.found_keywords,test.list_name)
